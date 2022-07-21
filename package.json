@@ -2,5 +2,32 @@
   "devDependencies": {
     "@types/jest": "^28.1.6",
     "@types/node": "^18.0.4"
-  }
+  },
+  "name": "encrypte",
+  "description": "encrypte is a encryption tool",
+  "version": "1.0.0",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cybemachine/encrypte.git"
+  },
+  "keywords": [
+    "encrypte",
+    "encrypt",
+    "decrypt",
+    "aes",
+    "AES",
+    "advance-encryption-system",
+    "web",
+    "node"
+  ],
+  "author": "ridhesh w <https://github.com/cybemachine>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cybemachine/encrypte/issues"
+  },
+  "homepage": "https://github.com/cybemachine/encrypte#readme"
 }
