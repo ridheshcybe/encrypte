@@ -1,7 +1,8 @@
 const mod = require("../../web/generate").default;
 
-// web alternative
-globalThis.crypto.getRandomValues = Math.random;
+// web crypto implementation
+globalThis.crypto = {};
+globalThis.crypto.getRandomValues = ()=>[Math.floor(Math.random() * 100)];
 
 it('random', () => {
     expect(mod()).not.toBe(mod());
