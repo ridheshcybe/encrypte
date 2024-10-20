@@ -5,7 +5,7 @@
   },
   "name": "encrypte",
   "description": "encrypte is a encryption tool",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "app/index.js",
   "scripts": {
     "test": "npx jest"
