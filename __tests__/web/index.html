@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="module">
+        import { AES as mod } from '../../web/index.js';
+
+        const app = new mod('hi');
+
+        console.log('encrypt', app.encrypt('hi') != 'hi')
+
+        console.log('decrypt', (app.decrypt(app.encrypt('hi'))) == 'hi')
+    </script>
+</body>
+
+</html>

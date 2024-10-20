@@ -18,15 +18,15 @@ export class AES {
 
   encrypt(text: string) {
     if (this.debug) console.debug(`encrypting ${text}`);
-    const iv = crypto.randomUUID();
+    const iv = crypto.randomUUID().slice(0, 32);
 
     return this.inner.encrypt(text, iv) + ':(IVHERE):' + iv;
   }
 
   decrypt(encrypted: string) {
     if (this.debug) console.debug(`decrypting ${encrypted}`);
-    const [cipher,iv] = encrypted.split(':(IVHERE):');
-    return this.inner.decrypt(cipher,iv);
+    const [cipher, iv] = encrypted.split(':(IVHERE):');
+    return this.inner.decrypt(cipher, iv);
   }
 }
 

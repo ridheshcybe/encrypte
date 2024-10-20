@@ -210,8 +210,6 @@ function crypt(encrypt, Text, Key, IV) {
     const trueout = (encrypt) ? `${outte}(IVSPLIT)${IV}` : outte;
     return trueout;
 }
-exports.crypt = crypt;
-;
 class AesCtr {
     pass;
     constructor(password) {
@@ -255,7 +253,7 @@ export class AES {
     encrypt(text) {
         if (this.debug)
             console.debug(`encrypting ${text}`);
-        const iv = (generate_1)();
+        const iv = crypto.randomUUID().slice(0, 32);
         return this.inner.encrypt(text, iv) + ':(IVHERE):' + iv;
     }
     decrypt(encrypted) {

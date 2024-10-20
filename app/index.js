@@ -22,7 +22,7 @@ class AES {
     encrypt(text) {
         if (this.debug)
             console.debug(`encrypting ${text}`);
-        const iv = crypto.randomUUID();
+        const iv = crypto.randomUUID().slice(0, 32);
         return this.inner.encrypt(text, iv) + ':(IVHERE):' + iv;
     }
     decrypt(encrypted) {
