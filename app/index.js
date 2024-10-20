@@ -10,7 +10,7 @@ class AES {
         if (!key) {
             if (debug)
                 console.debug("Debug: Changing key");
-            key = generate_1.default();
+            key = (0, generate_1.default)();
             if (debug)
                 console.debug(`Debug: Changed key to => ${key}`);
         }
@@ -22,12 +22,14 @@ class AES {
     encrypt(text) {
         if (this.debug)
             console.debug(`encrypting ${text}`);
-        return this.inner.encrypt(text, 256);
+        const iv = crypto.randomUUID();
+        return this.inner.encrypt(text, iv) + ':(IVHERE):' + iv;
     }
     decrypt(encrypted) {
         if (this.debug)
             console.debug(`decrypting ${encrypted}`);
-        return this.inner.decrypt(encrypted, 256);
+        const [cipher, iv] = encrypted.split(':(IVHERE):');
+        return this.inner.decrypt(cipher, iv);
     }
 }
 exports.AES = AES;

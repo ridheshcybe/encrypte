@@ -7,7 +7,7 @@ function generate() {
     let randomBytes;
     const getNextRandomValue = () => {
         (void 0 === randomIndex || randomIndex >= randomBytes.length) &&
-            ((randomIndex = 0), (randomBytes = crypto_1.randomBytes(256)));
+            ((randomIndex = 0), (randomBytes = (0, crypto_1.randomBytes)(256)));
         var n = randomBytes[randomIndex];
         return (randomIndex += 1), n;
     };

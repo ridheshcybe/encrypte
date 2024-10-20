@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "@types/jest": "^28.1.6",
-    "@types/node": "^18.0.4"
+    "@types/node": "^18.19.57"
   },
   "name": "encrypte",
   "description": "encrypte is a encryption tool",
